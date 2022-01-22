@@ -1,0 +1,24 @@
+import mongoose from 'mongoose';
+
+//this schema will define how our students will look like
+//in the database
+const studentSchema = mongoose.Schema({
+    
+    //  Variable name  / type
+    regNo: Number,       
+    studentName: String,
+    grade: String,
+    
+    //sets default value for type
+    section:{         
+        type: String,
+        default: 'A'
+    },
+
+});
+
+//creates model
+const student = mongoose.model('student', studentSchema);
+
+//exports the model we just created
+export default student;
