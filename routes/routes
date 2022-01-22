@@ -1,0 +1,17 @@
+import express from 'express'
+import { getStudents, createStudent, deleteStudent } from '../controllers/student.js'
+import student from '../models/student.js'; 
+
+const router = express.Router();
+
+//Used to call getStudents function in controller/stud ent.js
+//this function get will be presented as "/ + studentInfo"
+router.get('/', getStudents);
+
+//Used to call createStudent function in controller/student.js
+//this function get will be presented as "/ + "
+router.post('/', createStudent);
+
+router.delete('/:id',deleteStudent);
+
+export default router;
